@@ -13,17 +13,6 @@ const removeSession = (user) => ({
     user
 })
 
-// export const loginUser = user => async dispatch => {
-//     let res = await csrfFetch('/api/session', {
-//         method: 'POST',
-//         body: JSON.stringify(user)
-//     });
-//     let data = await res.json();
-//     debugger
-//     sessionStorage.setItem('currentUser', JSON.stringify(data.user));
-//     dispatch(receiveUser(data.user))
-// }
-
 export const login = (credential, password) => async dispatch => {
     const res = await csrfFetch("/api/session", {
         method: "POST",
